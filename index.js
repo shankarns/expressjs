@@ -1,15 +1,7 @@
-var express = require('http');
-var app = express();
-
-app.get('/', function (req, res) {
-    res.send('First express JS program');
-});
-
-var server = app.listen(3000, function () {
-
-    var host = server.address().address;
-    var port = server.address().port;
-
-    console.log('Example app listening at http://%s:%s', host, port);
-
-});
+var http = require('http');
+var host = "localhost";
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(8080, host);
+console.log('Server running at http://host:8080/');
